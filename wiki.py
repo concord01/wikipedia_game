@@ -16,14 +16,24 @@ def fetch_links(page):
 
 
 def wikipedia_game_solver(start_page, target_page):
-    links = fetch_links(start_page)
+    print("working on it...")
+    start_time=time.time()
 
-    # make a loop that checks every item in links and prints a message if target_page.title is in that list
-    for link in links():
-        if link == target_page.title:
-            print("link found")
-            
-    
+    queue = Queue() #queue for which items to check
+    visited = set() #keeps track of visited links
+    parent = {} #dictionary to keep track of parent
+
+    # start off by adding start page to queue and visited pages
+    queue.put(start_page.title)
+    visited.add(start_page.title)
+
+    #keep looping as long as queue is not empty
+    while not queue.empty():
+        #get next item in queue
+        current_page_title = queue.get()
+        #break out of loop if we find page we're looking for
+        if current_page_title == target_page.title:
+
         
 #setting pages for wiki game
 start_page = wiki.page("Queen (band)")
