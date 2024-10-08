@@ -19,14 +19,14 @@ def wikipedia_game_solver(start_page, target_page):
     links = fetch_links(start_page)
 
     # make a loop that checks every item in links and prints a message if target_page.title is in that list
-    for title in links():
-        if links.title == target_page.title:
+    for link in links():
+        if link == target_page.title:
             print("link found")
-            break
+            
     
         
 #setting pages for wiki game
 start_page = wiki.page("Queen (band)")
-target_page = wiki.page("David Bowie")
+target_page = wiki.page("Joe Biden")
 
 wikipedia_game_solver(start_page, target_page)
