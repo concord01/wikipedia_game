@@ -2,7 +2,7 @@ import wikipediaapi
 from queue import Queue
 import time
 
-user_agent = "p3_wiki (ho7652jo0401@pusd.us)"
+user_agent = "p3_wiki (joaquin.hoyem@gmail.com)"
 wiki = wikipediaapi.Wikipedia(user_agent, "en")
 
 
@@ -52,7 +52,7 @@ def wikipedia_game_solver(start_page, target_page):
     page_title = target_page.title
     while page_title != start_page.title:
         path.append(page_title)
-        page_titile = parent[page_title]
+        page_title = parent[page_title]
 
     path.append(start_page.title)
     path.reverse()
@@ -67,7 +67,7 @@ def wikipedia_game_solver(start_page, target_page):
         
 #setting pages for wiki game
 start_page = wiki.page("Queen (band)")
-target_page = wiki.page("Joe Biden")
+target_page = wiki.page("Decompression sickness")
 
 path = wikipedia_game_solver(start_page, target_page)
 print(path)
